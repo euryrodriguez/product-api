@@ -16,7 +16,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('name');
                 $table->string('symbol');
-                $table->string('exchange_rate');
+                $table->decimal('exchange_rate');
                 $table->softDeletes();
                 $table->timestamps();
             });
