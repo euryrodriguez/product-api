@@ -14,10 +14,11 @@ return new class extends Migration
         if (!Schema::hasTable('prices')) {
             Schema::create('prices', function (Blueprint $table) {
                 $table->id();
-                $table->bigIncrements('product_id')->unsigned();
-                $table->bigIncrements('currency_id')->unsigned();
+                $table->bigInteger('product_id')->unsigned();
+                $table->bigInteger('currency_id')->unsigned();
                 $table->decimal('price');
                 $table->timestamps();
+                $table->softDeletes();
                 $table->foreign('product_id')->references('id')->on('products');
                 $table->foreign('currency_id')->references('id')->on('currencies');
             });

@@ -21,6 +21,7 @@ return new class extends Migration
                 $table->decimal('tax_cost');
                 $table->decimal('manufacturing_cost');
                 $table->timestamps();
+                $table->softDeletes();
                 $table->foreign('currency_id')->references('id')->on('currencies');
             });
         }
