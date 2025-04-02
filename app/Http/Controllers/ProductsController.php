@@ -95,9 +95,9 @@ class ProductsController extends Controller
         $Producto = Producto::find($id);
 
         if ($Producto->delete()) {
-            echo json_encode(array('result' => 1));
+            echo json_encode(array('result' => 1, 'producto eliminado correctamente!'));
         } else {
-            echo json_encode(array('result' => 0));
+            echo json_encode(array('result' => 0, 'El producto no pudo ser eliminado'));
         }
     }
 
