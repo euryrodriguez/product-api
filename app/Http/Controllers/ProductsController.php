@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+        /**
+     * @SWG\Get(
+     *     path="/Productos",
+     *     summary="Obten una lista de productos",
+     *     tags={"Products"},
+     *     @SWG\Response(response=200, description="Successful operation"),
+     *     @SWG\Response(response=400, description="Invalid request")
+     * )
+     */
     public function products(){
         return Product::where('deleted_at', null)->get();
     }
